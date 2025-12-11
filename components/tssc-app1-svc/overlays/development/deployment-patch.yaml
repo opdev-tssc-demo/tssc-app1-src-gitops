@@ -6,11 +6,14 @@ metadata:
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
     tad.gitops.get/replicas: ".spec.replicas"
+    sscs-repo-permalink: https://github.com/opdev-tssc-demo/tssc-app1-src/commit/30aafd184e6209866bf3cdc66f6bd23c07be65f7
+    sscs-image-risk: 6
+    sscs-image-scanner: ./roxctl image scan --insecure-skip-tls-verify -e central-rhacs-operator.apps.sscs-acs.opdev.io:443 --image quay.io/opdev-tssc-demo/tssc-app1-img:30aafd184e6209866bf3cdc66f6bd23c07be65f7@sha256:bfea3d31b4eab71520890685fb0fda901e713d9701a460b83caa6891cc4f2d49 --output json --force
   name: tssc-app1-svc
 spec:
   replicas: 1
   template:
     spec:
       containers:
-        - image: quay.io/opdev-tssc-demo/tssc-app1-img:f986a1cab8cf464e91dc95a9cf06cee12d819339@sha256:81b06c922594338fdfdd932a468b2da223c7d20063a44cee87c064301842bfe5
+        - image: quay.io/opdev-tssc-demo/tssc-app1-img:30aafd184e6209866bf3cdc66f6bd23c07be65f7@sha256:bfea3d31b4eab71520890685fb0fda901e713d9701a460b83caa6891cc4f2d49
           name: container-image
