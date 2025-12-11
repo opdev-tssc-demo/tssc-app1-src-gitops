@@ -1,0 +1,6 @@
+apiVersion: "pipelinesascode.tekton.dev/v1alpha1"
+kind: Repository
+metadata:
+  name: tssc-app1-svc-repository
+spec:
+  url: https://github.com/opdev-tssc-demo/tssc-app1-src
